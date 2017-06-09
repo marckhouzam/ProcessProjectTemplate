@@ -148,5 +148,5 @@ pipeline {
 }
 @NonCPS
 def testmethod() {
-   return readJSON file: 'deploy.json'
+   return readJSON file: 'deploy.json';
 }
