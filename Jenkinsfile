@@ -33,7 +33,8 @@ pipeline {
           def deployConfig = null
           def files = null
           try{
-            deployConfig = readJSON file: 'deploy.json'
+            //deployConfig = readJSON file: 'deploy.json'
+            deployConfig = testmethod()
           } catch (Exception e) {
             error("Cannot read deploy.json file\nError:\n${e}")
           }
@@ -144,4 +145,8 @@ pipeline {
       }
     }
   }
+}
+@NonCPS
+def testmethod() {
+   return readJSON file: 'deploy.json'
 }
