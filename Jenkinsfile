@@ -33,6 +33,7 @@ pipeline {
           def deployConfig = null
           def files = null
           try{
+            @NonCPS
             deployConfig = readJSON file: 'deploy.json'
           } catch (Exception e) {
             error("Cannot read deploy.json file\nError:\n${e}")
